@@ -5,19 +5,18 @@
         @foreach ($comics as $comic)
             <div class="col">
                 <div class="card h-100" style="">
-                    <img src={{$comic->thumb}} class=" image-fluid" alt="...">
+                    <img src={{ $comic->thumb }} class=" image-fluid" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">{{$comic->title}}</h5>
-                        {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
+                        <h5 class="card-title">{{ $comic->title }}</h5>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">An item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
+                        <li class="list-group-item">{{ $comic->price }} €</li>
+                        <li class="list-group-item">{{ $comic->series }}</li>
+                        <li class="list-group-item">{{ $comic->sale_date }}</li>
+                        <li class="list-group-item">{{ $comic->type }}</li>
                     </ul>
                     <div class="card-body">
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
+                        <a class="btn btn-primary" href="{{ route('comics.show', ['comic' => $comic->id]) }}">Comic Description</a>
                     </div>
                 </div>
             </div>
