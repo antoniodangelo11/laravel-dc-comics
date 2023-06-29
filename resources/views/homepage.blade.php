@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('contents')
-    <h1 class="text-center text-light">Laravel Comics</h1>
+    <h1 class="text-center text-danger fw-bold">Laravel Comics</h1>
     <div class="d-flex flex-column">
         <div id="loader">
             <div class="ls-particles ls-part-1"></div>
@@ -13,9 +13,14 @@
             <div class="lightsaber ls-right ls-red"></div>
         </div>
         <div class="bat-btn">
-            <button>
+            <button class="bat_button">
                 <span><a href="{{ route('comics.index') }}">ARCHIVE COMICS
                 </a></span>
+            </button>
+        </div>
+        <div class="ins_btn">
+            <button class="ins_button">
+                <a href="{{ route('comics.create') }}">INSERT NEW COMIC</a>
             </button>
         </div>
     </div>
