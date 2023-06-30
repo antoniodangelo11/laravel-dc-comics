@@ -11,9 +11,6 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">{{ $comic->price }} €</li>
-                        <li class="list-group-item">{{ $comic->series }}</li>
-                        <li class="list-group-item">{{ $comic->sale_date }}</li>
-                        <li class="list-group-item">{{ $comic->type }}</li>
                     </ul>
                     <div class="card-body">
                         <a class="btn btn-primary" href="{{ route('comics.show', ['comic' => $comic->id]) }}">Details</a>
