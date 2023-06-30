@@ -1,7 +1,6 @@
 @extends('layouts.base')
 
 @section('contents')
-    <h1 class="text-center text-danger fw-bold">Laravel Comics</h1>
     <div class="d-flex flex-column">
         <div id="loader">
             <div class="ls-particles ls-part-1"></div>

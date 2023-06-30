@@ -8,6 +8,7 @@
     </head>
     <body>
         <div class="container mt-4">
+            <h1 class="text-center text-danger fw-bold">Laravel Comics</h1>
             <main>
                 @yield('contents')
             </main>
