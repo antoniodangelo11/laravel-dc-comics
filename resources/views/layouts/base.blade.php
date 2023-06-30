@@ -7,7 +7,7 @@
         @vite('resources/js/app.js')
     </head>
     <body>
-        <div class="container">
+        <div class="container mt-4">
             <main>
                 @yield('contents')
             </main>

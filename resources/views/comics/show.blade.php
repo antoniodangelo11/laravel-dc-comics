@@ -3,7 +3,7 @@
 @section('contents')
     <div class="col">
         <div class="card h-100" style="">
-            <img src={{ $comic->thumb }} class=" image-fluid" alt="...">
+            <img src={{ $comic->thumb }} class="image-fluid" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{ $comic->title }}</h5>
             </div>
@@ -14,7 +14,7 @@
                 <li class="list-group-item">{{ $comic->type }}</li>
             </ul>
             <div class="card-body">
-                <a class="btn btn-primary" href="{{ route('comics.show', ['comic' => $comic->id]) }}">Comic Description</a>
+                <p>{{ $comic->description }}</p>
             </div>
         </div>
     </div>
