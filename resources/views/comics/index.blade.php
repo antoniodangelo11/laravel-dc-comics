@@ -5,7 +5,7 @@
         @foreach ($comics as $comic)
             <div class="col">
                 <div class="card h-100" style="">
-                    <img src={{ $comic->thumb }} class=" image-fluid" alt="...">
+                    <img src={{ $comic->thumb }} class="image-fluid" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ $comic->title }}</h5>
                     </div>
