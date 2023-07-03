@@ -7,11 +7,12 @@
         @vite('resources/js/app.js')
     </head>
     <body>
+        @include('partials.header')
         <div class="container">
-            <h1 class="text-center text-danger fw-bold">Laravel Comics</h1>
             <main>
                 @yield('contents')
             </main>
         </div>
+        @include('partials.footer')
     </body>
 </html>
