@@ -9,10 +9,10 @@
                     <h5 class="card-title">{{ $comic->title }}</h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{ $comic->price }} €</li>
-                    <li class="list-group-item">{{ $comic->series }}</li>
-                    <li class="list-group-item">{{ $comic->sale_date }}</li>
-                    <li class="list-group-item">{{ $comic->type }}</li>
+                    <li class="list-group-item">Price: {{ $comic->price }} €</li>
+                    <li class="list-group-item">Series: {{ $comic->series }}</li>
+                    <li class="list-group-item">Sale Date: {{ $comic->sale_date }}</li>
+                    <li class="list-group-item">Type: {{ $comic->type }}</li>
                 </ul>
                 <div class="card-body">
                     <p>{{ $comic->description }}</p>
