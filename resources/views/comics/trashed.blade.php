@@ -25,7 +25,7 @@
                         <form action="{{ route('comics.harddelete', ['comic' => $comic->id]) }}" method="POST">
                             @csrf
                             @method('delete')
-                            <button class="btn btn-danger">Hard Delete</button>
+                            <button class="btn btn-danger hard_delete">Hard Delete</button>
                         </form>
                     </div>
                 </div>
