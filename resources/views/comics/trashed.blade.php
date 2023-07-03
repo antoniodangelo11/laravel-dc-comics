@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('contents')
-    <h1 class="text-danger">Comics Bin</h1>
+    <h1 class="text-warning text-center">Comics Bin</h1>
 
     @if (session('delete_success'))
         @php $comic = session('delete_success') @endphp
