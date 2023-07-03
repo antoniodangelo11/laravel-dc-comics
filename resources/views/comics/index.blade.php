@@ -15,6 +15,9 @@
                     <div class="card-body">
                         <a class="btn btn-primary" href="{{ route('comics.show', ['comic' => $comic->id]) }}">Details</a>
                     </div>
+                    <div class="card-body">
+                        <a class="btn btn-warning" href="{{ route('comics.edit', ['comic' => $comic->id]) }}">Edit</a>
+                    </div>
                 </div>
             </div>
         @endforeach
