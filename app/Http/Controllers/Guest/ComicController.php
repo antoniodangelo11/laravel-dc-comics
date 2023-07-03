@@ -53,6 +53,7 @@ class ComicController extends Controller
 
         // salva i dati nel database (Metodo 1)
         $newComic = new Comic();
+        
         $newComic->title = $data['title'];
         $newComic->thumb = $data['thumb'];
         $newComic->price = $data['price'];
@@ -60,6 +61,7 @@ class ComicController extends Controller
         $newComic->sale_date = $data['sale_date'];
         $newComic->type = $data['type'];
         $newComic->description = $data['description'];
+        
         $newComic->save();
 
         // Metodo 2 con create
@@ -99,7 +101,33 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        // validare i dati
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'thumb' => 'required|string|max:1000',
+            'price' => 'required|integer|max:255',
+            'series' => 'required|string|max:255',
+            'sale_date' => 'required|date',
+            'type' => 'required|string|max:255',
+            'description' => 'required|min:3|max:1000',
+        ]);
+
+        // aggiornare i dati nel db
+        $data = $request->all();
+
+        $comic->title = $data['title'];
+        $comic->thumb = $data['thumb'];
+        $comic->price = $data['price'];
+        $comic->series = $data['series'];
+        $comic->sale_date = $data['sale_date'];
+        $comic->type = $data['type'];
+        $comic->description = $data['description'];
+
+        $comic->update();
+
+
+        // redirect alla pagina show
+        return to_route('comics.show', ['comic' => $comic->id]);
     }
 
     /**
