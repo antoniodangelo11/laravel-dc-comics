@@ -22,5 +22,10 @@
                 <a href="{{ route('comics.create') }}">INSERT NEW COMIC</a>
             </button>
         </div>
+        <div class="btn">
+            <button class="button">
+                <a href="{{ route('comics.trashed') }}">COMICS BIN</a>
+            </button>
+        </div>
     </div>
 @endsection

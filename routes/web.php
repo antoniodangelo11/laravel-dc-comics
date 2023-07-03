@@ -18,8 +18,9 @@ use App\Http\Controllers\Guest\ComicController;
 Route::get('/', [PageController::class, 'homepage'])->name('homepage');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 
-Route::get('/comics/trashed', [ComicController::class, 'trashed'])->name('comics.trashed');
-Route::post('/comic/{comic}/restore', [ComicController::class, 'restore'])->name('comics.restore');
+Route::get('comics/trashed', [ComicController::class, 'trashed'])->name('comics.trashed');
+Route::post('comics/{comic}/restore', [ComicController::class, 'restore'])->name('comics.restore');
+Route::delete('comics/{comic}/harddelete', [ComicController::class, 'harddelete'])->name('comics.harddelete');
 Route::resource('comics', ComicController::class);
 
 

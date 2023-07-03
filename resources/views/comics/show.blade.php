@@ -3,8 +3,8 @@
 @section('contents')
     <div class="row">
         <div class="col-4 offset-4">
-            <div class="card h-100" style="">
-                <img src={{ $comic->thumb }} class="image-fluid" alt="...">
+            <div class="card h-100" style="border: 1px solid black">
+                <img src={{ $comic->thumb }} class="rounded" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ $comic->title }}</h5>
                 </div>

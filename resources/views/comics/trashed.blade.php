@@ -1,9 +1,17 @@
 @extends('layouts.base')
 
 @section('contents')
-    <h1>Comics deleted</h1>
+    <h1 class="text-danger">Comics Bin</h1>
+
+    @if (session('delete_success'))
+        @php $comic = session('delete_success') @endphp
+        <div class="alert alert-danger">
+            Comic "{{ $comic->title }}" has been permanently deleted
+        </div>
+    @endif
+
     <div class="row row-cols-3 p-4">
-        @foreach ($comics as $comic)
+        @foreach ($trashedComics as $comic)
             <div class="col mb-3">
                 <div class="card h-100" style="border: 1px solid black">
                     <img src={{ $comic->thumb }} class="image-fluid" alt="...">
@@ -14,21 +22,15 @@
                         <li class="list-group-item">Price: {{ $comic->price }} €</li>
                     </ul>
                     <div class="card-body">
-                        <a class="btn btn-primary" href="{{ route('comics.show', ['comic' => $comic->id]) }}">Details</a>
-                    </div>
-                    <div class="card-body">
-                        <a class="btn btn-warning" href="{{ route('comics.edit', ['comic' => $comic->id]) }}">Edit</a>
-                    </div>
-                    <div class="card-body">
-                        <form action="{{ route('comics.destroy', ['comic' => $comic->id]) }}" method="POST">
+                        <form action="{{ route('comics.harddelete', ['comic' => $comic->id]) }}" method="POST">
                             @csrf
                             @method('delete')
-                            <button class="btn btn-danger">Delete</button>
+                            <button class="btn btn-danger">Hard Delete</button>
                         </form>
                     </div>
                 </div>
             </div>
         @endforeach
     </div>
-    {{ $comics->links() }}
+    {{ $trashedComics->links() }}
 @endsection
