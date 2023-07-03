@@ -29,5 +29,4 @@
             </div>
         @endforeach
     </div>
-    {{ $comics->links() }}
 @endsection
